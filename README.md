@@ -4,6 +4,15 @@ This project is a dbt implementation for the PostgreSQL DVD Rental sample databa
 
 ---
 
+## Get the PostgreSQL DVD Rental Database
+
+You can download and set up the sample PostgreSQL database used for this project here:
+
+🔗 [PostgreSQL Sample Database - Neon](https://neon.com/postgresql/postgresql-getting-started/postgresql-sample-database)
+
+Follow the instructions on that page to create your database locally or in the cloud.
+
+
 ##  Run and Test the Project
 ```bash
 dbt debug         # Check connection
@@ -23,22 +32,18 @@ dbt docs serve    # View docs locally
   - `stg_dvdrental__customer`
   - `stg_dvdrental__payment`
   - `stg_dvdrental__rental`
-
 #### Tests:
-**Generic:**
-- `not_null` on primary keys
-- `unique` on IDs
-- `accepted_values` on enums (e.g., `rating` in film)
-- `relationships` between foreign keys
-
-**Singular:**
-- Check that no email addresses are uppercase.
-- Ensure postal codes in the US have 5 digits.
-- Assert that `rental_date < return_date`.
-- Confirm that all payment amounts are ≥ 0.
-
+- **Generic:**
+   - `not_null` on primary keys
+   - `unique` on IDs
+   - `accepted_values` on enums (e.g., `rating` in film)
+   - `relationships` between foreign keys
+- **Singular:**
+   - Check that no email addresses are uppercase.
+   - Ensure postal codes in the US have 5 digits.
+   - Assert that `rental_date < return_date`.
+   - Confirm that all payment amounts are ≥ 0.
 ---
-
 ### Core Layer (`dim_` and `fct_`)
 - Business logic and enriched facts/dimensions.
 - Example Models:
