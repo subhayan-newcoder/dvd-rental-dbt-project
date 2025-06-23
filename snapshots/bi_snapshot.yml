@@ -1,0 +1,24 @@
+snapshots:
+  - name: dim_customer_scd2
+    relation: ref('dim_customer')
+    description:  scd2_type_table_for_dim_customer
+    config:
+      database: retail-db
+      schema: bi
+      alias: dim_customer_hist
+      strategy: timestamp
+      unique_key: customer_id
+      updated_at: updated_at
+      dbt_valid_to_current: "'9999-12-31'::timestamp"
+      hard_deletes: ignore
+  - name: dim_address_scd2
+    relation: ref('stg_address')
+    config:
+      database: retail-db
+      schema: bi
+      alias: address_hist
+      strategy: timestamp
+      unique_key: address_id
+      updated_at : updated_at
+      dbt_valid_to_current: "'9999-12-31'::timestamp"
+      hard_deletes: ignore

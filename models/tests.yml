@@ -1,0 +1,29 @@
+models:
+  - name : stg_customer
+    columns : 
+      - name: customer_id
+        data_tests : 
+          - unique
+          - not_null
+
+  - name : dim_customer
+    columns : 
+      - name: customer_id
+        data_tests : 
+          - unique
+          - not_null
+          - relationships:
+                to: ref('stg_customer')
+                field: customer_id 
+
+  - name : dim_film
+    columns:
+      - name : rating
+        data_tests :
+          - accepted_values :
+                values : ['G', 'PG', 'PG-13', 'R', 'NC-17']
+
+  - name : fct_payment
+    data_tests:
+      - unique_columns_test:
+          column_names: 'payment_id, customer_id'
