@@ -1,10 +1,19 @@
-# 🎬 DVD Rental DBT Project
+# DVD Rental DBT Project
 
 This project is a dbt implementation for the PostgreSQL DVD Rental sample database. It includes a layered architecture with staging, core, and mart models, comprehensive testing, and dashboard design plans.
 
 ---
 
-## 🏗️ Project Structure
+##  Run and Test the Project
+```bash
+dbt debug         # Check connection
+dbt build         # Build models
+dbt test          # Run tests
+dbt docs generate # Build docs
+dbt docs serve    # View docs locally
+```
+
+## Project Structure
 
 ### Staging Layer (`stg_`)
 - Cleans and standardizes raw source data.
@@ -76,7 +85,7 @@ This project is a dbt implementation for the PostgreSQL DVD Rental sample databa
 
 ---
 
-## 📊 Dashboard Ideas
+## Dashboard Ideas
 
 1. **Revenue Dashboard**
    - Monthly revenue trend
@@ -103,7 +112,7 @@ This project is a dbt implementation for the PostgreSQL DVD Rental sample databa
 
 ---
 
-## ✅ dbt Features Practiced
+## dbt Features Practiced
 - Jinja macros
 - Incremental models
 - Snapshots (SCD2)
@@ -114,13 +123,13 @@ This project is a dbt implementation for the PostgreSQL DVD Rental sample databa
 
 ---
 
-## 📦 Packages Used
+## Packages Used
 - `dbt-utils`
-- `dbt-expectations` (optional for advanced testing)
+- `dbt-expectations`
 
 ---
 
-## 🚀 Project Goal
+## Project Goal
 This project is designed to build a **production-grade dbt workflow** on a classic transactional dataset, with robust data quality checks and a full reporting layer that can power interactive dashboards.
 
 ---
