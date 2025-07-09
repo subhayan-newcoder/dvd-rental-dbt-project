@@ -35,4 +35,4 @@ models:
     example:
       +materialized: view
 seeds:
-  +schema: public
+  +schema: source_schema

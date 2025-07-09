@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: rental_dvd
     database: retail-db  
-    schema: public
+    schema: source_schema
     tables:
       - name: actor
       - name: address

@@ -5,12 +5,20 @@ This project is a dbt implementation for the PostgreSQL DVD Rental sample databa
 ---
 
 ## Get the PostgreSQL DVD Rental Database
-
-You can download and set up the sample PostgreSQL database used for this project here:
-
 🔗 [PostgreSQL Sample Database - Neon](https://neon.com/postgresql/postgresql-getting-started/postgresql-sample-database)
 
-Follow the instructions on that page to create your database locally or in the cloud.
+I have already set up the sample PostgreSQL database used for this project.
+So You don't have to download the source data. It is already there in the seeds folder as csv files.
+
+## Set up of the Project:
+
+1. Clone this repo
+1. Install Docker in your system
+1. Run the following command 
+   ```bash
+   docker-compose up -d
+   ```
+1. Wait for few minutes to all the container to run fully
 
 
 ##  Run and Test the Project
