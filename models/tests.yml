@@ -15,6 +15,10 @@ models:
           - relationships:
                 to: ref('stg_customer')
                 field: customer_id 
+      - name: email
+        data_tests :
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^\\S+@\\S+\\.\\S+$"
 
   - name : dim_film
     columns:
@@ -22,6 +26,11 @@ models:
         data_tests :
           - accepted_values :
                 values : ['G', 'PG', 'PG-13', 'R', 'NC-17']
+  
+  - name : stg_payment
+    data_tests:
+      - unique_columns_test:
+          column_names: 'payment_id, customer_id'
 
   - name : fct_payment
     data_tests:

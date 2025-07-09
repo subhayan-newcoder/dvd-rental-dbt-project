@@ -1,0 +1,12 @@
+seeds:
+  - name: address
+    config:
+      column_types:
+        address_id: INT
+        address: TEXT
+        address2: TEXT
+        district: TEXT
+        city_id: INT
+        postal_code: TEXT
+        phone: TEXT
+        last_update: TEXT

@@ -12,7 +12,7 @@ select
   trim(address2) as address_line_2,
   district,
   city_id,
-  postal_code,
-  phone,
+  postal_code::INT,
+  phone::BIGINT,
   last_update::timestamp as updated_at
 from {{ source('rental_dvd', 'address') }}
