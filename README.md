@@ -19,12 +19,32 @@ So You don't have to download the source data. It is already there in the seeds 
    docker-compose up -d
    ```
 1. Wait for few minutes to all the container to run fully
+1. Create a profiles.yml file at location ~/.dbt/ and paste the following content:
+```yaml
+retail_dvd:
+  outputs:
+    dev:
+      dbname: retail-db
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: public
+      threads: 4
+      type: postgres
+      user: postgres
+  target: dev
+```
+
+---
+
 
 
 ##  Run and Test the Project
 ```bash
 dbt debug         # Check connection
-dbt build         # Build models
+dbt deps          # Check dependencies
+dbt seed          # Load seeds
+dbt build --exclude resource_type:seed        # Build models excluding seeds
 dbt test          # Run tests
 dbt docs generate # Build docs
 dbt docs serve    # View docs locally
