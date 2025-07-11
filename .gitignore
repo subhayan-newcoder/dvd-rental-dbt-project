@@ -5,3 +5,4 @@ logs/
 dbt_internal_packages/
 .vscode/
 .vscode/settings.json
+.idea/
